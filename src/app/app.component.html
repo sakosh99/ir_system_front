@@ -1,0 +1,39 @@
+<div class="app-toolbar">
+  <form [formGroup]="searchFormGroup">
+    <label class="dataset-label">Dataset: </label>
+    <select
+      class="dataset-field"
+      formControlName="datasetId">
+      <option class="dataset-option"
+              *ngFor="let dataset of datasets"
+              [ngValue]="dataset.id">
+        {{ dataset.name }}
+      </option>
+    </select>
+    <input type="text"
+           class="search-field"
+           formControlName="query"
+           placeholder="Search">
+    <button type="submit" class="search-button" (click)="search(searchFormGroup.value)">Search</button>
+    <span>{{totalCount}}</span>
+    <span (click)="previousClick()"><</span>
+    <span>{{page}}</span>
+    <span (click)="nextClick()">></span>
+  </form>
+</div>
+
+<div class="suggestions" *ngIf="suggestions.length !== 0">
+  <span class="suggestion" *ngFor="let suggestion of suggestions" (click)="suggestionClick(suggestion)">
+    {{suggestion.text}}
+  </span>
+</div>
+
+<ol class="docs-list">
+  <li @fade *ngFor="let doc of searchResult" class="doc-item">
+    <div class="doc-item-head">
+      <span class="span-id">{{doc.doc_id}}</span>
+      <span class="span-score">{{(doc.score).toFixed(2)}}</span>
+    </div>
+    <span class="span-text">{{doc.text}}</span>
+  </li>
+</ol>

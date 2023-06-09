@@ -1,0 +1,111 @@
+::ng-deep body {
+  margin: 0;
+}
+
+.app-toolbar {
+  height: 63px;
+  background: black;
+  color: white;
+  box-shadow: 3px -3px 10px 0 #D9D9D9;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+form {
+  margin: 0 16px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dataset-label {
+  width: calc(8% - 38px);
+}
+
+.dataset-label:after {
+  color: red;
+  content: " *" !important;
+}
+
+.dataset-field {
+  width: calc(12% - 38px);
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+}
+
+.dataset-option {
+  height: 20px;
+}
+
+.search-field {
+  width: calc(50% - 38px);
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+}
+
+.search-button {
+  width: calc(10% - 38px);
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.search-field:focus-visible, .dataset-field:focus-visible,
+.page-field:focus-visible, .search-button:focus-visible {
+  outline: none !important;
+}
+
+.doc-item {
+  margin: 18px;
+}
+
+
+.docs-list {
+  counter-reset: li;
+  list-style: none;
+  padding: 0 1em 0 2em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  transition: all .3s ease-out;
+}
+
+.doc-item {
+  background: #d9d9d9d9;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.doc-item-head {
+  height: 40px;
+}
+
+.span-id {
+  float: left;
+  padding: 10px;
+}
+
+.span-score {
+  float: right;
+  padding: 10px;
+}
+
+.span-text {
+  padding: 10px;
+}
+
+.suggestions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.suggestion {
+  margin: 10px;
+}
